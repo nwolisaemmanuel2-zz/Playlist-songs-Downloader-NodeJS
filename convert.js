@@ -13,7 +13,7 @@ fs.readdir('./downloads/',function(err, files){
         ffmpeg(__dirname+'/downloads/'+mfile)
         .save(__dirname+'/convertedfiles/'+mfile.replace(/\.m4a/g,'').replace(/\.mp3/g,'')+'.mp3')
         .on('end', function() {
-        console.log('Finish Converting '+ mfile.yellow.bold);
+        console.log('Finish Convert '+ mfile.yellow.bold);
         fs.unlink(__dirname+'/downloads/'+mfile, (err) => {
         if (err) throw err;
         console.log('successfully deleted ' + mfile.red.bold);
